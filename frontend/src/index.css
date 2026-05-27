@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --primary:       #6C3FC5;
+  --primary-dark:  #4b0082;
+  --primary-light: #9B72E8;
+  --accent:        #E040FB;
+  --accent2:       #00BCD4;
+  --success:       #10B981;
+  --warning:       #F59E0B;
+  --danger:        #EF4444;
+  --info:          #3B82F6;
+  --bg:            #f0eaff;
+  --card-bg:       rgba(255,255,255,0.82);
+  --card-border:   rgba(108,63,197,0.13);
+  --text:          #1a1035;
+  --text-muted:    #6B7280;
+  --border:        #e0d6f7;
+  --shadow:        0 4px 24px rgba(108,63,197,0.10);
+  --shadow-lg:     0 8px 40px rgba(108,63,197,0.18);
+  --radius:        14px;
+  --radius-sm:     8px;
+  --radius-lg:     22px;
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("https://www.premierpaintroller.com/wp-content/uploads/2018/06/50-Beautiful-and-Minimalist-Presentation-Backgrounds-03.jpg")
+              no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Glassmorphism helper */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: 'Poppins', sans-serif; cursor: pointer; }
+input, select, textarea { font-family: 'Poppins', sans-serif; }
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 3px; }
+
+/* ── Utility ───────────────────────────────────────────────── */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  border: none;
+  padding: 11px 26px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 14px;
+  transition: opacity .2s, transform .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 14px;
+  transition: all .2s;
+}
+.btn-outline:hover { background: var(--primary); color: #fff; }
+
+/* ── Feature cards (Home) ──────────────────────────────────── */
+.feature-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 30px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.feature-card {
+  background: rgba(255,255,255,0.85);
+  border: none;
+  padding: 28px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(108,63,197,0.10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform .2s, box-shadow .2s;
+}
+.feature-card:hover { transform: translateY(-5px); box-shadow: 0 8px 28px rgba(108,63,197,0.18); }
+.feature-card .icon { font-size: 26px; margin-bottom: 10px; }
+.peach  { background: linear-gradient(135deg,#ffddc1,#ffb3c6); }
+.purple { background: linear-gradient(135deg,#e8d5ff,#c9b8f5); }
+.blue   { background: linear-gradient(135deg,#c8f0ff,#b3d9ff); }
+
+/* ── User reviews section ──────────────────────────────────── */
+.user-reviews {
+  padding: 50px 8%;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  margin: 30px 20px;
+}
+.section-title { font-size: 24px; font-weight: 700; color: var(--primary-dark); margin-bottom: 28px; }
+.content-container { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+.image-container { flex: 1; display: flex; align-items: center; justify-content: center; position: relative; }
+.mobile-img { width: 160px; height: auto; position: absolute; left: -50px; z-index: 1; }
+.text-container { flex: 1; text-align: left; }
+.subheading { font-size: 13px; color: var(--primary-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.feature-grid { display: flex; gap: 36px; margin-top: 20px; }
+.feature { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.feature h3 { font-size: 16px; color: var(--primary-dark); margin: 8px 0 4px; }
+.feature p { font-size: 13px; color: var(--text-muted); max-width: 220px; }
+
+/* ── Animations ────────────────────────────────────────────── */
+@keyframes fadeInDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn     { from { opacity:0; transform:translateY(20px);  } to { opacity:1; transform:translateY(0); } }
+@keyframes spin       { to { transform: rotate(360deg); } }
+@keyframes pulse      { 0%,100%{opacity:1} 50%{opacity:.5} }
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .feature-container { grid-template-columns: 1fr 1fr; }
+  .content-container { flex-direction: column; }
+  .feature-grid { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .feature-container { grid-template-columns: 1fr; }
+}

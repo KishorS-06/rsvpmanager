@@ -1,0 +1,7 @@
+/* Remove default Vite root constraints so pages fill the screen */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}

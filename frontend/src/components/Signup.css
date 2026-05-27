@@ -1,0 +1,108 @@
+.SignUpCon {
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(108,63,197,0.14);
+  width: 480px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px auto;
+  border-radius: 22px;
+  box-shadow: 0 8px 48px rgba(108,63,197,0.16);
+  padding: 36px 40px;
+}
+
+.SignUpTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.SignLogo img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform .3s;
+}
+.SignLogo img:hover { transform: scale(1.08); }
+
+.fb_btn {
+  background: linear-gradient(135deg, #6C3FC5, #E040FB);
+  color: #fff;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: .7;
+}
+
+.or {
+  color: #9ca3af;
+  font-size: 13px;
+  margin: 10px 0;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.or::before, .or::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  background: #e0d6f7;
+}
+.or::before { left: 0; }
+.or::after  { right: 0; }
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #e0d6f7;
+  border-radius: 9px;
+  font-size: 14px;
+  background: rgba(255,255,255,0.9);
+  color: #1a1035;
+  transition: border-color .2s, box-shadow .2s;
+  box-sizing: border-box;
+}
+.form input:focus {
+  outline: none;
+  border-color: #6C3FC5;
+  box-shadow: 0 0 0 3px rgba(108,63,197,0.12);
+}
+
+.signUp_btn {
+  width: 100%;
+  padding: 13px;
+  margin-top: 8px;
+  background: linear-gradient(135deg, #6C3FC5, #E040FB);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .2s, transform .15s;
+  box-shadow: 0 4px 18px rgba(108,63,197,0.28);
+}
+.signUp_btn:hover { opacity: .88; transform: translateY(-1px); }
+.signUp_btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+.error {
+  color: #EF4444;
+  font-size: 12px;
+  margin: 3px 0 6px;
+}
