@@ -30,7 +30,7 @@ export const NotificationProvider = ({ children }) => {
 
     fetchNotifications();
 
-    const newSocket = io(import.meta.env.VITE_API_URL || 'http://localhost:5000', {
+    const newSocket = io(import.meta.env.VITE_API_URL || 'https://rsvpmanager.onrender.com', {
       auth: { token: localStorage.getItem('token') },
       reconnectionAttempts: 5,
       reconnectionDelay: 1000
