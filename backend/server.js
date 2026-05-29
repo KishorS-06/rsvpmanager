@@ -22,6 +22,7 @@ import userRoutes from './routes/users.js';
 import notificationRoutes from './routes/notifications.js';
 import commentRoutes from './routes/comments.js';
 import paymentRoutes from './routes/payments.js';
+import geocodeRoutes from './routes/geocode.js';
 import { apiLimiter } from './middleware/rateLimiter.js';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
 import { startReminderScheduler, startRsvpAutoClose, startEventStatusUpdater } from './utils/scheduler.js';
@@ -127,6 +128,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/payments', paymentRoutes);
+app.use('/api/geocode', geocodeRoutes);
 
 // ─── HEALTH CHECK ────────────────────────────────────────────────────────────
 app.get('/health', (req, res) => {

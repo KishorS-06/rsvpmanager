@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "../../src/styles/eventlocation.css";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import api from "../utils/api";
 
 const EventLocation = () => {
   const navigate = useNavigate();
@@ -16,11 +17,10 @@ const EventLocation = () => {
 
   const handleMapClick = ({ latLng }) => {
     setSelectedLocation(latLng);
-    // Reverse geocode using Nominatim (free, no API key)
-    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latLng[0]}&lon=${latLng[1]}&format=json`)
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.display_name) setAddress(data.display_name);
+    // Proxy through backend to avoid browser CORS restrictions on Nominatim
+    api.get(`/api/geocode/reverse?lat=${latLng[0]}&lon=${latLng[1]}`)
+      .then((res) => {
+        if (res.data.display_name) setAddress(res.data.display_name);
       })
       .catch(() => {});
   };
